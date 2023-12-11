@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Verificação saúde de coração</title>
+  
+    
+</head>
+<style>
+  tr td {
+    text-align: center;
+    padding:11px;
+    background:#f8f8f8;
+    border:1px solid #ccc;
+  }
+</style>
+<body>
+<img src="1.jpg" alt="hero" class="w-full object-cover h-96 " />  
+<section class="w-full mt-10">
+  <h2 class="text-4xl text-center">Por favor, preencha o formulário</h2>
+  <div class="container  mx-auto">
+    <div class=" mx-auto">
+      <div class="flex flex-wrap  items-center">
+        <div class="w-full  px-4 mb-16 lg:mb-0">
+          <div class= "mx-auto flex ">
+                        
+            <form action="" class="mt-10 mx-auto flex gap-5 items-start">
+              <div class="w-1/2"> 
+
+              <div class="mb-5">
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Idade" id="age">
+              </div>
+
+              
+
+              <div class="mb-5">
+                <select id="gender" class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg">
+                  <option valu="1">Male</option>
+                  <option valu="0">Female</option>
+                </select>
+                 
+              </div>
+
+          
+              <div class="mb-5">
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" id="chestpain" placeholder="Chestpain">
+                <small id="error"></small>
+              </div>
+
+              <div class="mb-5">
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="RestingBP" id="restingBP">
+              </div>
+
+              <div class="mb-5">
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Serumcholestrol" id="serumcholestrol">
+              </div>
+
+              <div class="mb-5">
+                <input  class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Fastingbloodsugar" id="fastingbloodsugar">
+              </div>
+               
+            
+              <div class="mb-5 flex gap-2">
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Restingrelectro" id="restingrelectro">
+
+                <input  class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Maxheartrate" id="maxheartrate">
+              </div> 
+              
+              
+            </div><div class="w-1/2">
+              <div class="mb-5 ">                  
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Exerciseangia" id="exerciseangia">
+              </div>    
+                         
+              <div class="mb-5">                  
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" step="0.1" placeholder="Oldpeak" id="oldpeak">
+              </div>
+
+              <div class="mb-5">                  
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Slope" id="slope">
+              </div>
+              <div class="mb-5 mt-3">                  
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Noofmajorvessels" id="noofmajorvessels">
+ 
+              </div> 
+
+              <div class="mb-5 mt-3">                  
+                <input class="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-800 focus:border-purple-500 focus:outline-purple rounded-lg" type="number" placeholder="Target" id="target">
+             
+              </div>
+
+              <button onclick="newItem()" class="addBtn relative group block w-full mb-6 py-3 px-5 text-center text-sm font-semibold text-orange-50 bg-orange-600 rounded-full overflow-hidden" type="submit">
+                <span class="relative">Cadastrar</span>
+              </button>
+            </div>  
+
+
+               
+              
+               
+              
+            </form>
+          </div>
+</section>
+
+    <!-- Tabela com items existentes -->
+    <section class="items container mx-auto py-10">
+        <table id="myTable" class="w-full">
+            <tr>
+                <th class="py-2">Idade</th>
+                <th class="py-2">Gender</th>
+                <th class="py-2">Chestpain</th>
+                <th class="py-2">RestingBP</th>
+                <th class="py-2">Serumcholestrol</th>
+                <th class="py-2">Restingrelectro</th>
+                <th class="py-2">Maxheartrate</th>
+                <th class="py-2">Exerciseangia</th>
+                <th class="py-2">Oldpeak</th>
+                <th class="py-2">Slope</th>
+                <th class="py-2">Noofmajorvessels</th>
+                <th class="py-2">Target</th>
+            </tr>
+        </table>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+
+
